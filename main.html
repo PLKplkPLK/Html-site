@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <title>Smart Rent - strona g³ówna</title>
+   <meta charset="">
+   <meta name="language" content="pl" />
+   <meta name="description" content="Strona firmy Smart Rent">
+   <meta name="keywords" content="wypo¿yczalnia, samochody, sport, najlepsza">
+   <meta name="author" content="Kacper Müller, Miko³aj Marton">
+   <link rel="icon" href="images/icomain.ico">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+      @font-face {
+         font-family: "poppins-regular";
+         src: url("Poppins-Regular.ttf");
+      }
+
+      body {
+         margin: 0px;
+      }
+
+      #main {
+         text-align: center;
+         width: 1200px;
+         margin: auto;
+      }
+
+      #logo {
+         text-align: center;
+         margin-top: 30px;
+         padding-top: 30px;
+         height: 100px;
+         background-image: url("images/logo3.png");
+         background-size: contain;
+         background-repeat: no-repeat;
+         background-position: 50% 50%;
+         <!-- transition-duration: 0.5s; -->
+      }
+
+
+      #pytanie {
+         margin-top: 70px;
+         margin-bottom: 70px;
+         font-size: 40px;
+         color: #1E56A0;
+         font-family: poppins-regular;
+      }
+
+      #txt {
+         color: white;
+         text-shadow: 2px 2px 2px black;
+         font-size: 40px;
+         font-family: poppins-regular;
+         position: relative;
+         top: 65%;
+      }
+
+      #aokienek, #aokienek2 {
+         display: inline-block;
+         height: 300px;
+         margin-left: 30px;
+         margin-right: 30px;
+      }
+
+      #sport, #uzytkowe {
+         display: inline-block;
+         width: 350px;
+         height: 350px;
+         border: solid 5px #0073e6;
+         border-radius: 20px;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: 50% 50%;
+         box-shadow: 0px 1px 3px rgba(0, 0, 0, .73), 0px 0px 18px rgba(0, 0, 0, .13);
+         position: relative;
+         z-index: 1;
+         transition: 0.7s;
+      }
+
+      #sport {
+         background-image: url("images/imgsportokienko.jpg");
+      }
+
+      #uzytkowe {
+         background-image: url("images/imgutilokienko.jpg");
+      }
+
+         #sport:hover, #uzytkowe:hover, #inne:hover {
+            box-shadow: 0px 0px 15px rgba(0,0,0,.8);
+            transform: scale(1.2);
+            position: relative;
+            z-index: 1;
+            transition: 0.7s;
+         }
+
+      #sport:hover {
+         background-image: url("images/gifsport.gif");
+      }
+
+      #uzytkowe:hover {
+         background-image: url("images/360utility.gif");
+      }
+
+      #img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+
+      #txtdod {
+         margin-top: 150px;
+         margin-left: 290px;
+         margin-right: 290px;
+         margin-bottom: 75px;
+         display: block;
+         color: white;
+         text-decoration: none;
+      }
+
+      #inne {
+         border: solid 4px #1a8cff;
+         border-radius: 20px;
+         font-size: 30px;
+         color: #ffffff;
+         font-family: poppins-regular;
+         background-color: #66a3ff;
+         text-decoration: none;
+         transition: 0.7s;
+      }
+
+         #inne:hover {
+            transform: scale(1.1);
+         }
+
+      #footer {
+         position: absolute;
+         bottom: 0;
+         width: 644px;
+         height: 20px;
+         margin: 0 auto;
+      }
+      @media only screen and (max-width: 1200px) {
+         #main {
+            width: 100%;
+         }
+
+         #logo {
+            padding-top: 0px;
+            height: 150px;
+         }
+
+         #pytanie {
+            font-size: 40px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+         }
+
+         #aokienek, #aokienek2 {
+            height: 340px;
+            padding: 0px;
+            margin: 0px;
+            padding-bottom: 20px;
+            width: 340px;
+            margin: 0px 15px;
+         }
+
+         #aokienek2 {
+            margin-right: 20px;
+         }
+
+         #sport, #uzytkowe {
+            width: 340px;
+            border: solid 7px #0073e6;
+         }
+
+         #txtdod {
+            padding-top: 40px;
+            padding-bottom: 50px;
+            margin: auto;
+            width: 400px;
+         }
+
+         #sport:hover, #uzytkowe:hover, #inne:hover {
+            transform: scale(1.05);
+         }
+
+         #inne {
+            font-size: 27px;
+         }
+         
+         footer {
+            padding-top: 30px;
+            font-size: 25px;
+         }
+      }
+
+      @media only screen and (max-width: 748px) {
+         #aokienek{
+            margin-bottom: 35px;
+         }
+      }
+
+      @media only screen and (max-width: 400px) {
+
+         #logo {
+            width: 100%;
+         }
+
+         #pytanie {
+            font-size: 35px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+         }
+
+         #sport, #uzytkowe {
+            width: 290px;
+            height: 290px;
+         }
+
+         #aokienek, #aokienek2 {
+            width: 290px;
+            height: 290px;
+            padding-bottom: 0px;
+            margin: auto;
+            margin-bottom: 50px;
+            margin-right: 5px;
+         }
+
+         #txtdod {
+            padding: 5px;
+            width: auto;
+            margin: 0px 10px;
+         }
+
+         #inne{
+            font-size: 25px;
+         }
+
+         #sport:hover, #uzytkowe:hover, #inne:hover {
+            transform: scale(1.0);
+         }
+
+         footer{
+            padding-top: 30px;
+            font-size: 20px;
+         }
+      }
+
+   </style>
+
+</head>
+
+<body>
+   <div id="main">
+
+      <div id="logo">
+      </div>
+
+      <div id="pytanie">
+         Jakiego samochodu szukasz?
+      </div>
+
+      <a id="aokienek" href="sport.html" title="PrzejdŸ do strony z samochodami sportowymi">
+         <div id="sport">
+            <p id="txt">Sport</p>
+         </div>
+      </a>
+
+      <a id="aokienek2" href="util.html" title="PrzejdŸ do strony z samochodami u¿ytkowymi">
+         <div id="uzytkowe">
+            <p id="txt">U¿ytkowe</p>
+         </div>
+      </a>
+
+      <a id="txtdod" href="inne.html" title="PrzejdŸ do strony z informacjami dodatkowymi">
+         <div id="inne">
+            Tutaj znajdziesz informacje dodatkowe:<br />kontakt, adres, informacje o firmie...
+         </div>
+      </a>
+
+      <footer>
+         Copyright: M. Marton, K. Müller
+      </footer>
+
+   </div>
+
+   <script language="Javascript" type="text/javascript">      
+      document.getElementById("logo").style.transitionDuration = "0.5s";
+
+      document.getElementById("aokienek").addEventListener("mouseover", fsport);
+      document.getElementById("aokienek").addEventListener("mouseleave", fmain);
+      function fsport(){
+         document.getElementById("inne").style.backgroundColor = "#810000";
+         document.getElementById("pytanie").style.color = "#810000";
+         document.getElementById("inne").style.color = "#ffffff";
+         document.getElementById("inne").style.borderColor = "red";
+         document.getElementById("logo").style.backgroundImage = "url(images/logosport3.png)";
+         document.getElementById("uzytkowe").style.borderColor = "red";
+         document.getElementById("sport").style.borderColor = "red";
+      }
+
+      document.getElementById("aokienek2").addEventListener("mouseover", futil);
+      document.getElementById("aokienek2").addEventListener("mouseleave", fmain);
+      function futil() {
+         document.body.transla
+         document.getElementById("inne").style.backgroundColor = "#00b38f";
+         document.getElementById("pytanie").style.color = "#00b38f";
+         document.getElementById("inne").style.color = "#ffffff";
+         document.getElementById("inne").style.borderColor = "aquamarine";
+         document.getElementById("logo").style.backgroundImage = "url(images/logoutil3.png)";
+         document.getElementById("uzytkowe").style.borderColor = "aquamarine";
+         document.getElementById("sport").style.borderColor = "aquamarine";
+      }
+
+      function fmain() {
+         document.getElementById("inne").style.backgroundColor = "#66a3ff";
+         document.getElementById("pytanie").style.color = "#1E56A0";
+         document.getElementById("inne").style.borderColor = "#1a8cff";
+         document.getElementById("logo").style.backgroundImage = "url(images/logo3.png)";
+         document.getElementById("sport").style.borderColor = "#0073e6";
+         document.getElementById("uzytkowe").style.borderColor = "#0073e6";
+      }
+
+   </script>
+
+</body>
+
+</html>

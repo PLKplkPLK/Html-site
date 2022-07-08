@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+   <title>Smart Rent - U¿ytkowe</title>
+   <meta charset="">
+   <meta name="language" content="pl" />
+   <meta name="description" content="Strona firmy Smart Rent">
+   <meta name="keywords" content="wypo¿yczalnia, samochody, sport, najlepsza">
+   <meta name="author" content="Kacper Müller, Miko³aj Marton">
+   <link rel="icon" href="images/icosport.ico">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+
+      @font-face {
+         font-family: "poppins-regular";
+         src: url("Poppins-Regular.ttf");
+      }
+
+      #main {
+         text-align: center;
+         width: 1200px;
+         margin: auto;
+      }
+
+      #logoa {
+         display: block;
+         margin-top: 30px;
+         height: 130px;
+         margin: auto;
+         border-bottom: groove 2px aquamarine;
+         padding-bottom: 40px;
+         margin-top: 30px;
+      }
+
+      #logo {
+         height: 130px;
+         text-align: center;
+         background-image: url("images/logoutil3.png");
+         background-size: contain;
+         background-repeat: no-repeat;
+         background-position: 50% 50%;
+         margin-left: 10px;
+      }
+
+      #pojemnik {
+         border-bottom: groove 2px aquamarine;
+         display: flex;
+         flex-direction: row;
+      }
+
+      #okienka1, #okienka2 {
+         box-sizing: border-box;
+         width: 50%;
+         padding: 10px;
+         font-family: poppins-regular;
+         color: aquamarine;
+         font-size: 35px;
+         z-index: 1;
+         transition: 0.5s;
+      }
+
+      #samochody {
+         width: 100%;
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+      }
+
+      .samochod {
+         box-sizing: border-box;
+         display: inline-block;
+         width: 45%;
+         margin: 20px;
+         border: solid 5px aquamarine;
+         border-radius: 20px;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         box-shadow: 0px 1px 3px rgba(0, 0, 0, .73), 0px 0px 18px rgba(0, 0, 0, .13);
+         height: 300px;
+         font-family: Candara;
+         color: white;
+         font-size: 30px;
+         text-shadow: 2px 2px 2px black;
+         transition: 0.5s;
+      }
+
+      .info {
+         box-sizing: border-box;
+         font-family: poppins-regular;
+         font-size: 18px;
+         margin: 20px;
+         width: 45%;
+         display: flex;
+         align-items: center;
+         text-align: left;
+      }
+      .info:nth-child( odd ) {
+         text-align: right;
+         justify-content:right;
+      }
+
+      .samochod:hover {
+         transform: scale(1.1);
+         transition: 0.5s;
+      }
+
+      #footer {
+         position: absolute;
+         bottom: 0;
+         width: 644px;
+         height: 20px;
+         margin: 0 auto;
+      }
+
+      #zakup {
+         font-family: poppins-regular;
+         color: darkblue;
+         font-size: 27px;
+         padding: 50px 0px;
+         margin: auto;
+      }
+
+      a {
+         text-decoration: none;
+      }
+      @media only screen and (max-width: 1200px) {
+         #main {
+            width: 100%;
+         }
+         .info {
+            width: 46.5%;
+            font-size: 20px;
+         }
+      }
+      @media only screen and (max-width: 1000px) {
+         #pojemnik {
+            margin-bottom: 20px;
+         }
+         .samochod {
+            margin: auto;
+         }
+      }
+      @media only screen and (max-width: 930px) {
+         .samochod {
+            height: 250px;
+         }
+      }
+      @media only screen and (max-width: 850px) {
+         #okienka1, #okienka2 {
+            border: 3px solid aquamarine;
+            border-radius: 10px;
+            margin: 5px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .73), 0px 0px 18px rgba(0, 0, 0, .13);
+            width: 40%;
+            margin: auto;
+         }
+         #logoa {
+            border-bottom: none;
+         }
+         #pojemnik {
+            border-bottom: none;
+            margin-bottom: 40px;
+         }
+         .samochod {
+            margin: auto;
+         }
+         .info {
+            margin: 25px;
+            width: 375px;
+            margin: auto;
+         }
+         #zakup {
+            padding: 35px 0px;
+         }
+      }
+      @media only screen and (max-width: 800px) {
+         .info {
+            width: 45%;
+            border: 3px solid #810000;
+            border-radius: 10px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .73), 0px 0px 18px rgba(0, 0, 0, .13);
+            padding: 15px;
+         }
+         .samochod {
+            width: 80%;
+            margin-bottom: 30px;
+         }
+         .info {
+            margin-bottom: 60px;
+            width: 70%;
+         }
+         #samochody {
+            flex-direction: column;
+            flex-wrap: nowrap;
+         }
+      }
+      @media only screen and (max-width: 660px) {
+         #okienka1, #okienka2 {
+            width: 48%;
+            margin: auto;
+         }
+      }
+      @media only screen and (max-width: 520px) {
+         #samochody {
+            flex-direction: column;
+            flex-wrap: nowrap;
+         }
+         .samochod {
+            width: 90%;
+            height: 225px;
+            margin: 0px 0px 20px 20px;
+         }
+         .info {
+            width: 90%;
+            margin: 0px 0px 20px 20px;
+            font-size: 18px;
+         }
+         #okienka1, #okienka2 {
+            font-size: 25px;
+         }
+         #zakup {
+            font-size: 24px;
+         }
+      }
+      
+      @media only screen and (max-width: 305px) {
+         #okienka1, #okienka2 {
+            font-size: 18px;
+            width: 50%;
+         }
+         .samochod {
+            width: 90%;
+            height: 250px;
+            margin: 0px 0px 20px 20px;
+         }
+
+         .info {
+            width: 90%;
+            margin: 0px 0px 20px 20px;
+            font-size: 16px;
+         }
+      }
+   </style>
+
+</head>
+
+<body>
+   <div id="main">
+      <a id="logoa" href="main.html">
+         <div id="logo" title="PrzejdŸ do strony g³ównej">
+         </div>
+      </a>
+
+      <div id="pojemnik">
+         <a id="okienka1" href="util.html" title="PrzejdŸ do strony z samochodami sportowymi">
+            Samochody sportowe
+         </a>
+         <a id="okienka2" href="inne.html" title="PrzejdŸ do strony z informacjami dodatkowymi">
+            Informacje dodatkowe
+         </a>
+      </div>
+
+      <div id="samochody">
+
+         <div class="samochod" id="ferrari" style="background-image: url('images/samochody/ferrari.jpg')" 
+              onmouseover="zmien('ferrari','url(images/samochody/ferrari2.jpg)')" onmouseout="odzmien('ferrari','url(images/samochody/ferrari.jpg)')">
+            Ferrari 430
+         </div>
+         <div class="info" id="infoferrari">
+            Ferrari 430<br />silnik: 4,3l V8<br />moc: 510KM<br />przyspieszenie 0-100 km/h: 4s<br /><br />czas ustanowiony na torze Nürburgring Nordschleife: 7:55,00
+         </div>
+
+         <div class="info" id="infogtr">
+            Nissan Skyline GT-R<br />silnik: 2,6l I6 podwójne turbodo³adowanie<br />moc: 276KM<br />przyspieszenie 0-100 km/h: 4,6s<br /><br />czas ustanowiony na torze Suzuka: 2:35,17
+         </div>
+         <div class="samochod" id="gtr" style="background-image: url('images/samochody/gtr.jpg')" 
+              onmouseover="zmien('gtr','url(images/samochody/gtr2.jpg)')" onmouseout="odzmien('gtr','url(images/samochody/gtr.jpg)')">
+            Nissan Skyline GT-R
+         </div>
+
+         <div class="samochod" id="amg" onclick="info('infoamg');" style="background-image: url('images/samochody/amg.jpg')" 
+              onmouseover="zmien('amg','url(images/samochody/amg2.jpg)')" onmouseout="odzmien('amg','url(images/samochody/amg.jpg)')">
+            Mercedes AMG GT R
+         </div>
+         <div class="info" id="infoamg">
+            Mercedes AMG GT R<br />silnik: 4,0l V8 podwójne turbodo³adowanie<br />moc: 577KM<br />przyspieszenie 0-100 km/h: 3,2s<br /><br />czas ustanowiony na torze Nürburgring Nordschleife: 7:10,92
+         </div>
+
+         <div class="info" id="infomustang">
+            Ford Mustang<br />silnik: 5,0l V8<br />moc: 412KM<br />przyspieszenie 0-100 km/h: 4,6s<br /><br />czas ustanowiony na torze Grattan Raceway: 1:32,50
+         </div>
+         <div class="samochod" id="mustang" style="background-image: url('images/samochody/mustang.jpg')" 
+              onmouseover="zmien('mustang','url(images/samochody/mustang2.jpg)')" onmouseout="odzmien('mustang','url(images/samochody/mustang.jpg)')">
+            Ford Mustang
+         </div>
+
+         <div class="samochod" id="am" style="background-image: url('images/samochody/am.jpg')" 
+              onmouseover="zmien('am','url(images/samochody/am2.jpg)')" onmouseout="odzmien('am','url(images/samochody/am.jpg)')">
+            Aston Martin DBS
+         </div>
+         <div class="info" id="infoam">
+            Aston Martin DBS<br />silnik: 6,0l V12<br />moc: 510KM<br />przyspieszenie 0-100 km/h: 4,3s<br /><br />czas ustanowiony na Nürburgring Nordschleife: 8:02.00
+         </div>
+
+         <div class="info" id="infocadillac">
+            Cadillac<br />silnik: 6,0l V8<br />moc: 285KM<br />przyspieszenie 0-100 km/h: 6s<br />rocznik: 1956
+         </div>
+         <div class="samochod" id="cadillac" style="background-image: url('images/samochody/cadillac.jpg')" 
+              onmouseover="zmien('cadillac','url(images/samochody/cadillac2.jpg)')" onmouseout="odzmien('cadillac','url(images/samochody/cadillac.jpg)')">
+            Cadillac
+         </div>
+
+         <div class="samochod" id="gtrn" style="background-image: url('images/samochody/gtrn.jpg')" 
+              onmouseover="zmien('gtrn','url(images/samochody/gtrn2.jpg)')" onmouseout="odzmien('gtrn','url(images/samochody/gtrn.jpg)')">
+            Nissan GT-R
+         </div>
+         <div class="info" id="infogtrn">
+            Nissan GT-R<br />silnik: 3,8l V6 podwójne turbodo³adowanie<br />moc: 473KM<br />przyspieszenie 0-100 km/h: 3,4s<br /><br />czas ustanowiony na Nürburgring Nordschleife: 7:26.70
+         </div>
+
+         <div class="info" id="infoporsche">
+            Porsche Panamera<br />silnik: 4,0l V8 podwójne turbodo³adowanie<br />moc: 690KM<br />przyspieszenie 0-100 km/h: 3,1s<br /><br />czas ustanowiony na torze EuroSpeedway Lausitz: 1:33,31
+         </div>
+         <div class="samochod" id="porsche" style="background-image: url('images/samochody/porsche.jpg')" 
+              onmouseover="zmien('porsche','url(images/samochody/porsche2.jpg)')" onmouseout="odzmien('porsche','url(images/samochody/porsche.jpg)')">
+            Porsche Panamera
+         </div>
+
+         <div id="zakup">
+            Jeœli zainteresowa³ ciê któryœ model, prosimy o kontakt dostêpny na<br /> <a href="info.html" style="color:aquamarine" title="PrzejdŸ do strony z informacjami dodatkowymi">stronie z informacjami dodatkowymi</a>.
+         </div>
+      </div>
+
+      <footer>
+         Copyright: M. Marton, K. Müller
+      </footer>
+
+   </div>
+
+   <script language="Javascript" type="text/javascript">
+      document.getElementById("logo").style.transitionDuration = "0.8s";
+      document.getElementById("pojemnik").style.color.transitionDuration = "0.4s";
+
+      document.getElementById("okienka1").addEventListener("mouseover", fsport);
+      document.getElementById("okienka1").addEventListener("mouseleave", futil);
+      function futil() {
+         document.getElementById("logo").style.backgroundImage = "url(images/logoutil3.png)";
+         document.getElementById("pojemnik").style.borderBottomColor = "aquamarine";
+         document.getElementById("logoa").style.borderBottomColor = "aquamarine";
+         document.getElementById("pojemnik").style.backgroundImage = "url(images/gradziel.png)";
+         document.getElementById("okienka1").style.color = "white";
+         document.getElementById("okienka1").style.textShadow = "2px 2px 2px black";
+         let x = document.getElementsByClassName("samochod");
+         for (let i = 0; i < x.length; i++) {
+            x[i].style.borderColor = "aquamarine";
+         }
+      }
+
+      document.getElementById("okienka2").addEventListener("mouseover", fdod);
+      document.getElementById("okienka2").addEventListener("mouseleave", fsport);
+      function fdod() {
+         document.getElementById("logo").style.backgroundImage = "url(images/logo3.png)";
+         document.getElementById("pojemnik").style.borderBottomColor = "aquamarine";
+         document.getElementById("logoa").style.borderBottomColor = "#0073e6";
+         document.getElementById("pojemnik").style.backgroundImage = "url(images/gradnieb.png)";
+         document.getElementById("okienka2").style.color = "white";
+         document.getElementById("okienka2").style.textShadow = "2px 2px 2px black";
+         let x = document.getElementsByClassName("samochod");
+         for (let i = 0; i < x.length; i++) {
+            x[i].style.borderColor = "#1E56A0";
+         }
+      }
+
+      function fsport() {
+         document.getElementById("logo").style.backgroundImage = "url(images/logosport3.png)";
+         document.getElementById("pojemnik").style.borderBottomColor = "red";
+         document.getElementById("logoa").style.borderBottomColor = "red";
+         document.getElementById("pojemnik").style.background = "white";
+         document.getElementById("okienka1").style.color = "#810000";
+         document.getElementById("okienka2").style.color = "#810000";
+         document.getElementById("okienka1").style.textShadow = "none";
+         document.getElementById("okienka2").style.textShadow = "none";
+         let x = document.getElementsByClassName("samochod");
+         for (let i = 0; i < x.length; i++) {
+            x[i].style.borderColor = "red";
+         }
+      }
+
+      function zmien(nazwa,sciezka) {
+         document.getElementById( nazwa ).style.backgroundImage = sciezka;
+      }
+      function odzmien(nazwa, sciezka) {
+         document.getElementById( nazwa ).style.backgroundImage = sciezka;
+      }
+
+      window.onload = zamiana;
+      window.addEventListener('resize', zamiana);
+      function zamiana() {
+         if (window.innerWidth > 800) {
+            document.getElementById("infogtr").after(document.getElementById("gtr"));
+            document.getElementById("infomustang").after(document.getElementById("mustang"));
+            document.getElementById("infocadillac").after(document.getElementById("cadillac"));
+            document.getElementById("infoporsche").after(document.getElementById("porsche"));
+         }
+         if (window.innerWidth <= 800) {
+            document.getElementById("infogtr").before(document.getElementById("gtr"));
+            document.getElementById("infomustang").before(document.getElementById("mustang"));
+            document.getElementById("infocadillac").before(document.getElementById("cadillac"));
+            document.getElementById("infoporsche").before(document.getElementById("porsche"));
+         }
+      }
+
+   </script>
+
+</body>
+
+</html>
